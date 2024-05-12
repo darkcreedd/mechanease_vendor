@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:mechanease_vendor/features/account/pages/about_us_page.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:vehicle_assistance/features/account/pages/activity_page.dart';
-import 'package:vehicle_assistance/features/account/pages/edit_profile_page.dart';
-import 'package:vehicle_assistance/features/account/pages/edit_vehicle_page.dart';
+import 'package:mechanease_vendor/features/account/pages/reviews_page.dart';
+import 'package:mechanease_vendor/features/account/pages/edit_profile_page.dart';
+import 'package:mechanease_vendor/features/account/pages/edit_vehicle_page.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -26,7 +27,8 @@ class AccountPage extends StatelessWidget {
                 },
               );
             },
-            titleTextStyle: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            titleTextStyle: theme.textTheme.titleMedium
+                ?.copyWith(fontWeight: FontWeight.bold),
             title: const Text("Jeron"),
             trailing: const Icon(IconlyLight.edit),
             leading: const CircleAvatar(
@@ -39,9 +41,10 @@ class AccountPage extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           ListTile(
-            leading: const Icon(Icons.car_repair),
-            title: const Text("My Vehicle"),
-            titleTextStyle: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+            leading: const Icon(Icons.home_work),
+            title: const Text("My WorkShop"),
+            titleTextStyle: theme.textTheme.titleSmall
+                ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
             onTap: () {
               showCupertinoModalBottomSheet(
@@ -54,15 +57,16 @@ class AccountPage extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(IconlyLight.activity),
-            title: const Text("Activity"),
-            titleTextStyle: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+            leading: const Icon(IconlyLight.star),
+            title: const Text("Reviews"),
+            titleTextStyle: theme.textTheme.titleSmall
+                ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
             onTap: () {
               showCupertinoModalBottomSheet(
                 context: context,
                 builder: (context) {
-                  return const ActivityPage();
+                  return const ReviewsPage();
                 },
               );
             },
@@ -71,13 +75,14 @@ class AccountPage extends StatelessWidget {
           ListTile(
             leading: const Icon(CupertinoIcons.info),
             title: const Text("About Us"),
-            titleTextStyle: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+            titleTextStyle: theme.textTheme.titleSmall
+                ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
             onTap: () {
               showCupertinoModalBottomSheet(
                 context: context,
                 builder: (context) {
-                  return const ActivityPage();
+                  return const AboutUsPage();
                 },
               );
             },
@@ -86,7 +91,8 @@ class AccountPage extends StatelessWidget {
           ListTile(
             leading: const Icon(CupertinoIcons.heart),
             title: const Text("Tell a Friend"),
-            titleTextStyle: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+            titleTextStyle: theme.textTheme.titleSmall
+                ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
             onTap: () {
               Share.share("Check out our project work!");
@@ -96,7 +102,8 @@ class AccountPage extends StatelessWidget {
           ListTile(
             leading: const Icon(IconlyLight.logout),
             title: const Text("Logout"),
-            titleTextStyle: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+            titleTextStyle: theme.textTheme.titleSmall
+                ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
             onTap: () {},
           ),

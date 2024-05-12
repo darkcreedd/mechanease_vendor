@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:vehicle_assistance/features/services/service_details_page.dart';
-import 'package:vehicle_assistance/shared/entities/vehicle_service.dart';
+import 'package:mechanease_vendor/features/services/service_details_page.dart';
+import 'package:mechanease_vendor/shared/entities/vehicle_service.dart';
 
 class ServiceProviders extends StatelessWidget {
   const ServiceProviders({super.key, required this.service});
@@ -17,7 +17,8 @@ class ServiceProviders extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(service.title),
-        titleTextStyle: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        titleTextStyle:
+            theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
       ),
       body: SafeArea(
         child: ListView.separated(

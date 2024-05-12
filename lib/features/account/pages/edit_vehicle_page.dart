@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:vehicle_assistance/features/account/widgets/vehicle_detail_card.dart';
+import 'package:mechanease_vendor/features/account/widgets/vehicle_detail_card.dart';
 
 class EditVehiclePage extends StatelessWidget {
   const EditVehiclePage({super.key});
@@ -13,7 +13,8 @@ class EditVehiclePage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: const CloseButton(),
-        titleTextStyle: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        titleTextStyle:
+            theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         title: const Text("My Vehicle"),
       ),
       body: ListView(
@@ -21,7 +22,8 @@ class EditVehiclePage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 16),
         children: [
           CachedNetworkImage(
-            placeholder: (context, url) => const Center(child: CircularProgressIndicator.adaptive()),
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator.adaptive()),
             errorWidget: (context, url, error) => const Icon(Icons.error),
             fit: BoxFit.cover,
             width: double.maxFinite,
@@ -34,26 +36,49 @@ class EditVehiclePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Honda Civic Hybrid", style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                Text("Honda Civic Hybrid",
+                    style: theme.textTheme.titleMedium
+                        ?.copyWith(fontWeight: FontWeight.bold)),
                 const SizedBox(height: 15),
                 SizedBox(
                   height: 105,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: const [
-                      VehicleDetailCard(title: "Year", value: "2024", icon: Icons.access_time),
+                      VehicleDetailCard(
+                          title: "Year",
+                          value: "2024",
+                          icon: Icons.access_time),
                       SizedBox(width: 10),
-                      VehicleDetailCard(title: "Color", value: "Black", icon: Icons.color_lens),
+                      VehicleDetailCard(
+                          title: "Color",
+                          value: "Black",
+                          icon: Icons.color_lens),
                       SizedBox(width: 10),
-                      VehicleDetailCard(title: "Fuel", value: "Petrol", icon: Icons.local_gas_station),
+                      VehicleDetailCard(
+                          title: "Fuel",
+                          value: "Petrol",
+                          icon: Icons.local_gas_station),
                       SizedBox(width: 10),
-                      VehicleDetailCard(title: "Model", value: "Civic", icon: Icons.car_repair),
+                      VehicleDetailCard(
+                          title: "Model",
+                          value: "Civic",
+                          icon: Icons.car_repair),
                       SizedBox(width: 10),
-                      VehicleDetailCard(title: "Plate", value: "ABC 123", icon: Icons.local_parking),
+                      VehicleDetailCard(
+                          title: "Plate",
+                          value: "ABC 123",
+                          icon: Icons.local_parking),
                       SizedBox(width: 10),
-                      VehicleDetailCard(title: "Gear", value: "Auto", icon: Icons.transit_enterexit),
+                      VehicleDetailCard(
+                          title: "Gear",
+                          value: "Auto",
+                          icon: Icons.transit_enterexit),
                       SizedBox(width: 10),
-                      VehicleDetailCard(title: "Wheels", value: "4", icon: Icons.local_gas_station),
+                      VehicleDetailCard(
+                          title: "Wheels",
+                          value: "4",
+                          icon: Icons.local_gas_station),
                     ],
                   ),
                 )

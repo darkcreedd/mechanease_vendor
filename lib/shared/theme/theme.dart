@@ -28,7 +28,8 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan, brightness: Brightness.dark),
+    colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.cyan, brightness: Brightness.dark),
     textTheme: GoogleFonts.openSansTextTheme(
       ThemeData.dark().textTheme,
     ),

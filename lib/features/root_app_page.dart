@@ -2,10 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:vehicle_assistance/features/home/pages/location_page.dart';
-import 'package:vehicle_assistance/features/home/pages/notifications_page.dart';
-import 'package:vehicle_assistance/features/sos/pages/sos_page.dart';
 
+import '../features/home/pages/location_page.dart';
+import '../features/home/pages/notifications_page.dart';
 import 'account/pages/account_page.dart';
 import 'home/pages/home_page.dart';
 
@@ -25,28 +24,11 @@ class _RootAppPageState extends State<RootAppPage> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        leading: SearchAnchor(
-          builder: (context, controller) {
-            return IconButton(
-              icon: const Icon(IconlyLight.search),
-              onPressed: () {
-                controller.openView();
-              },
-            );
-          },
-          suggestionsBuilder: (context, controller) {
-            return List.generate(
-              1,
-              (index) => ListTile(
-                title: Text("Search Result $index"),
-                onTap: () {},
-              ),
-            );
-          },
-        ),
+        centerTitle: false,
         title: ActionChip(
           label: const Text("Accra, Ghana"),
-          backgroundColor: theme.colorScheme.secondaryContainer.withOpacity(0.5),
+          backgroundColor:
+              theme.colorScheme.secondaryContainer.withOpacity(0.5),
           avatar: const Icon(IconlyLight.location),
           side: BorderSide(width: 0, color: Colors.grey.shade400),
           onPressed: () {
@@ -76,18 +58,6 @@ class _RootAppPageState extends State<RootAppPage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showCupertinoModalBottomSheet(
-            context: context,
-            builder: (context) {
-              return const SOSPage();
-            },
-          );
-        },
-        child: const Icon(Icons.sos),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {

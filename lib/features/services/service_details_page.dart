@@ -5,8 +5,8 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:vehicle_assistance/features/services/book_appointment_page.dart';
-import 'package:vehicle_assistance/features/services/service_provider_location.dart';
+import 'package:mechanease_vendor/features/services/book_appointment_page.dart';
+import 'package:mechanease_vendor/features/services/service_provider_location.dart';
 
 class ServiceDetailsPage extends StatelessWidget {
   const ServiceDetailsPage({super.key, required this.heroTag});
@@ -19,14 +19,16 @@ class ServiceDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("KNUST Mechanic Shop"),
-        titleTextStyle: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        titleTextStyle:
+            theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
       ),
       body: ListView(
         children: [
           Hero(
             tag: heroTag,
             child: CachedNetworkImage(
-              placeholder: (context, url) => const Center(child: CircularProgressIndicator.adaptive()),
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator.adaptive()),
               imageUrl:
                   "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               fit: BoxFit.cover,
@@ -50,7 +52,8 @@ class ServiceDetailsPage extends StatelessWidget {
                         ),
                         Text(
                           "Call",
-                          style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.bodySmall
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -68,7 +71,9 @@ class ServiceDetailsPage extends StatelessWidget {
                           },
                           icon: const Icon(IconlyLight.location),
                         ),
-                        Text("Directions", style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold)),
+                        Text("Directions",
+                            style: theme.textTheme.bodySmall
+                                ?.copyWith(fontWeight: FontWeight.bold)),
                       ],
                     ),
                     const SizedBox(width: 25),
@@ -80,7 +85,9 @@ class ServiceDetailsPage extends StatelessWidget {
                           },
                           icon: const Icon(CupertinoIcons.share),
                         ),
-                        Text("Share", style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold)),
+                        Text("Share",
+                            style: theme.textTheme.bodySmall
+                                ?.copyWith(fontWeight: FontWeight.bold)),
                       ],
                     ),
                     const Spacer(),
@@ -88,11 +95,15 @@ class ServiceDetailsPage extends StatelessWidget {
                       children: [
                         ActionChip(
                           onPressed: () {},
-                          avatar: const Icon(CupertinoIcons.star_fill, size: 16),
+                          avatar:
+                              const Icon(CupertinoIcons.star_fill, size: 16),
                           label: const Text("4.1"),
-                          labelStyle: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
+                          labelStyle: theme.textTheme.bodySmall
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
-                        Text("2k+ ratings", style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold)),
+                        Text("2k+ ratings",
+                            style: theme.textTheme.bodySmall
+                                ?.copyWith(fontWeight: FontWeight.bold)),
                       ],
                     )
                   ],
@@ -106,18 +117,22 @@ class ServiceDetailsPage extends StatelessWidget {
                       child: Column(
                         children: [
                           ListTile(
-                            leading: Icon(IconlyLight.location, color: theme.colorScheme.primary),
+                            leading: Icon(IconlyLight.location,
+                                color: theme.colorScheme.primary),
                             title: Text(
                               "Spintex, Accra",
-                              style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                              style: theme.textTheme.titleSmall
+                                  ?.copyWith(fontWeight: FontWeight.bold),
                             ),
                             subtitle: const Text("0.8km away from you"),
                           ),
                           ListTile(
-                            leading: Icon(IconlyLight.calendar, color: theme.colorScheme.primary),
+                            leading: Icon(IconlyLight.calendar,
+                                color: theme.colorScheme.primary),
                             title: Text(
                               "Monday - Friday",
-                              style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                              style: theme.textTheme.titleSmall
+                                  ?.copyWith(fontWeight: FontWeight.bold),
                             ),
                             subtitle: const Text("8:00am - 5:00pm"),
                           ),
@@ -129,11 +144,13 @@ class ServiceDetailsPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   "Services",
-                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 10),
                 GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4),
                   itemBuilder: (context, index) {
                     return const Card.outlined();
                   },

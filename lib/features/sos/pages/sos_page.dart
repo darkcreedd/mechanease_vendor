@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:vehicle_assistance/shared/data/emergency.dart';
+import 'package:mechanease_vendor/shared/data/emergency.dart';
 
 import '../../../shared/widgets/bottom_sheet_appbar.dart';
 
@@ -24,7 +24,8 @@ class SOSPage extends StatelessWidget {
                 children: [
                   Text(
                     "Before Help Arrives",
-                    style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.titleMedium
+                        ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
                   Text.rich(
@@ -33,7 +34,8 @@ class SOSPage extends StatelessWidget {
                         const TextSpan(text: "1. "),
                         TextSpan(
                           text: "Find a safe spot: ",
-                          style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.bodyMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                         const TextSpan(
                             text:
@@ -49,7 +51,8 @@ class SOSPage extends StatelessWidget {
                         const TextSpan(text: "2. "),
                         TextSpan(
                           text: "Stay visible: ",
-                          style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.bodyMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                         const TextSpan(
                             text:
@@ -65,7 +68,8 @@ class SOSPage extends StatelessWidget {
                         const TextSpan(text: "3. "),
                         TextSpan(
                           text: "Stay in your car (if safe): ",
-                          style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.bodyMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                         const TextSpan(
                             text:
@@ -79,7 +83,9 @@ class SOSPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 18),
-          Text("Select Emergency", style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+          Text("Select Emergency",
+              style: theme.textTheme.titleMedium
+                  ?.copyWith(fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
           GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -106,7 +112,8 @@ class SOSPage extends StatelessWidget {
                         const Spacer(),
                         Text(
                           emergency.name,
-                          style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.bodyLarge
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),

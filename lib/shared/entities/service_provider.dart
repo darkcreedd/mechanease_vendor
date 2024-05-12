@@ -1,4 +1,4 @@
-import 'package:vehicle_assistance/shared/entities/vehicle_service.dart';
+import 'package:mechanease_vendor/shared/entities/vehicle_service.dart';
 
 class ServiceProvider {
   final String name;
@@ -7,5 +7,6 @@ class ServiceProvider {
 
   final List<VehicleService> services;
 
-  ServiceProvider({required this.name, required this.services, required this.image});
+  ServiceProvider(
+      {required this.name, required this.services, required this.image});
 }

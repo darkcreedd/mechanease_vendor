@@ -1,4 +1,4 @@
-# vehicle_assistance
+# mechanease_vendor
 
 Emergency Vehicle Assitance App
 

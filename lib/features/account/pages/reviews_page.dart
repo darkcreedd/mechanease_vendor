@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../shared/widgets/bottom_sheet_appbar.dart';
 
-class ActivityPage extends StatelessWidget {
-  const ActivityPage({super.key});
+class ReviewsPage extends StatelessWidget {
+  const ReviewsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: bottomSheetAppBar(context, "Your Activity"),
+      appBar: bottomSheetAppBar(context, "Reviews"),
     );
   }
 }

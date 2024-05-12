@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vehicle_assistance/shared/theme/theme.dart';
+import 'package:mechanease_vendor/shared/theme/theme.dart';
 
 import 'features/root_app_page.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Vehicle Assistance',
+      title: 'Mechanease Vendor',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
