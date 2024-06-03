@@ -6,7 +6,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:mechanease_vendor/features/account/pages/reviews_page.dart';
 import 'package:mechanease_vendor/features/account/pages/edit_profile_page.dart';
-import 'package:mechanease_vendor/features/account/pages/edit_vehicle_page.dart';
+import 'package:mechanease_vendor/features/account/pages/workshop_details.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -29,7 +29,7 @@ class AccountPage extends StatelessWidget {
             },
             titleTextStyle: theme.textTheme.titleMedium
                 ?.copyWith(fontWeight: FontWeight.bold),
-            title: const Text("Jeron"),
+            title: const Text("John Appleseed"),
             trailing: const Icon(IconlyLight.edit),
             leading: const CircleAvatar(
               radius: 25,
@@ -41,7 +41,7 @@ class AccountPage extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           ListTile(
-            leading: const Icon(Icons.home_work),
+            leading: const Icon(Icons.home_work_outlined),
             title: const Text("My WorkShop"),
             titleTextStyle: theme.textTheme.titleSmall
                 ?.copyWith(fontWeight: FontWeight.bold),
@@ -50,7 +50,7 @@ class AccountPage extends StatelessWidget {
               showCupertinoModalBottomSheet(
                 context: context,
                 builder: (context) {
-                  return const EditVehiclePage();
+                  return const MyWorkShopPage();
                 },
               );
             },
@@ -58,7 +58,7 @@ class AccountPage extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(IconlyLight.star),
-            title: const Text("Reviews"),
+            title: const Text("Customer Reviews"),
             titleTextStyle: theme.textTheme.titleSmall
                 ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
@@ -105,7 +105,60 @@ class AccountPage extends StatelessWidget {
             titleTextStyle: theme.textTheme.titleSmall
                 ?.copyWith(fontWeight: FontWeight.bold),
             trailing: const Icon(IconlyLight.arrowRight3),
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    surfaceTintColor: Colors.transparent,
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(IconlyLight.logout, color: Colors.red),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Logout',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 12, horizontal: 50),
+                    content: const Text(
+                      'Do you really want to logout?',
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        child: const Text('Cancel'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: Text(
+                          'Logout',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(color: Colors.red),
+                        ),
+                        onPressed: () {
+                          // Add your logout code here
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
           ),
         ],
       ),
